@@ -1,7 +1,7 @@
 # Link Herokuapp
 https://django-tugaspbp2raspati.herokuapp.com/katalog/
 
-#Bagan request user ke web aplikasi berbasis Django
+# Bagan request user ke web aplikasi berbasis Django
 ```mermaid
 flowchart LR
     User-->|request|urls.py;
