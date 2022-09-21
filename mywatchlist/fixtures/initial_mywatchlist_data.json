@@ -1,0 +1,114 @@
+[
+    {
+        "model": "mywatchlist.MyWatchListItem",
+        "pk": 1,
+        "fields": {
+            "watched": "yes",
+            "title": "Shawsank Redemption",
+            "rating": 5,
+            "release_date": "1994",
+            "review": "The Shawshank Redemption has great performances, extremely well written script and story all leading to a deeply emotional climax"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchListItem",
+        "pk": 2,
+        "fields": {
+            "watched": "yes",
+            "title": "The Dark Knight",
+            "rating": 4.9,
+            "release_date": "2008",
+            "review": "A dark, gritty, and realistic look on how superheroes would act and how they can remain unidentified"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchListItem",
+        "pk": 3,
+        "fields": {
+            "watched": "no",
+            "title": "The Godfather",
+            "rating": 4.8,
+            "release_date": "1972",
+            "review": "It is a gangster film without any of the pity and hatred we might feel towards such aliens in our midst, because it recognises that in all of us there is the ignition towards power and criminality. "
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchListItem",
+        "pk": 4,
+        "fields": {
+            "watched": "yes",
+            "title": "Coco",
+            "rating": 4.8,
+            "release_date": "2017",
+            "review": "Un poco loco is my favourite song of all time"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchListItem",
+        "pk": 5,
+        "fields": {
+            "watched": "yes",
+            "title": "Baby Driver",
+            "rating": 4.8,
+            "release_date": "2017",
+            "review": "It's thrilling filmmaking, a total blast, and rarely misses a beat"
+        }
+
+    },
+    {
+        "model": "mywatchlist.MyWatchListItem",
+        "pk": 6,
+        "fields": {
+            "watched": "no",
+            "title": "Pokemon: Mewtwo Strikes Back ",
+            "rating": 4.8,
+            "release_date": "2019",
+            "review": "The plot was great. Designs was excellent as well. I remember watching the original movie back when I was a kid."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchListItem",
+        "pk": 7,
+        "fields": {
+            "watched": "yes",
+            "title": "se7en",
+            "rating": 5,
+            "release_date": "1995",
+            "review": "Seven is not really a very deep or profound film, but it provides the convincing illusion of one"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchListItem",
+        "pk": 8,
+        "fields": {
+            "watched": "yes",
+            "title": "Inception",
+            "rating": 4.8,
+            "release_date": "2010",
+            "review": "It is a film about movies and dreams and reality, and what sort of life it is best to find when you leave the cinema and return to whatever you left to enter."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchListItem",
+        "pk": 9,
+        "fields": {
+            "watched": "yes",
+            "title": "The Prestige",
+            "rating": 4.9,
+            "release_date": "2006",
+            "review": "The Prestige is a very engaging movie with many story lines to follow. When it's finally exposed it kind of ruins it."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchListItem",
+        "pk": 10,
+        "fields": {
+            "watched": "yes",
+            "title": "Interstellar",
+            "rating": 5,
+            "release_date": "2014",
+            "review": "Interstellar is a movie like no other. Unlike many apocalyptic sci-fi films that feature advanced technology as the source of our destruction (ala The Terminator movies), it instead asserts that technology will save us."
+        }
+    }
+    
+]
