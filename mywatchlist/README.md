@@ -8,7 +8,7 @@
 
 ### Perbedaan HTML, JSON, dan XML
 
-1. HTML 
+1. HTML <br>
   HTML adalah bahasa standar pemrogaman yang digunakan untuk membuat halaman website, yang diakses melalui internet. Singkatan dari "Hypertext Markup Language" atau "bahasa markup". Bahasa markup ini mengacu pada cara tag yang digunakan, untuk menentukan tata letak halaman dan elemen di dalam halaman.
 
   ```html
