@@ -100,3 +100,19 @@
     return render(request, "mywatchlist.html", context)
   ```
   
+  `Untuk XML`<br>
+  
+  ```xml 
+    def show_xml(request):
+    data = MyWatchListItem.objects.all()
+    return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
+  ```
+  
+  `Untuk JSON`<br>
+  
+  ```json
+    def show_json(request):
+    data = MyWatchListItem.objects.all()
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+  ```
+  
