@@ -44,7 +44,9 @@
   Extensible Markup Language (XML) adalah bahasa komputer yang dibuat oleh World Wide Web Consortium (W3C) untuk menyederhanakan proses pertukaran dan penyimpanan data. Hal ini disebabkan keunikan dan perbedaan sistem yang digunakan oleh masing-masing server yang terhubung ke internet. Maka dari itu, diperlukan adanya standardisasi  proses transfer data antar server.
   
   ```xml
+  
   ...
+  
   <object model="mywatchlist.mywatchlistitem" pk="1">
         <field name="watched" type="TextField">yes</field>
         <field name="title" type="TextField">Shawsank Redemption</field>
@@ -54,4 +56,20 @@
     </object>
   ...
   ```
+### Mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?  
+
+  Misal sebuah data disimpan di suatu server ,tanpa data delivery data dari database tidak akan bisa ditampilkan di sisi frontend .Untuk mengirimkan data ke sisi user, harus ada data delivery yang dikirim dari server ke user. Selain masalah tersebut ada juga kasus dimana data tersebut bisa saja berubah-ubah sepanjang jalan. Karena data sudah tersimpan di sever, data tersebut bisa diganti tanpa masalah, kemudian data tersebut bisa di-deliver ke user.
+  
+### Implementasi Checklist Tugas 3
+
+1. Membuat app django baru dengan command `python manage.py startapp mywatchlist` lalu masukan `mywatchlist` ke list `INSTALLED_APPS` yang ada di `settings.py` pada folder `project_django`.
+
+2. Menambahkan path mywatchlist sehingga app dapat diakses pada localhost, tambahkan path di urls.py di project_django
+   ```
+    urlpatterns = [
+        ...
+        path("mywatchlist/", include("mywatchlist.urls"))
+        ...
+    ]
+   ```
   
