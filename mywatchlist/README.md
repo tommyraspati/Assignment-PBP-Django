@@ -72,4 +72,31 @@
         ...
     ]
    ```
+ 3. Buat sebuah model MyWatchList pada models.py seperti berikut
+   
+   ```
+    class MyWatchList(models.Model):
+        watched = models.TextField()
+        title = models.TextField()
+        rating = models.FloatField()
+        release_date = models.TextField()
+        review = models.TextField()
+   ```
+   
+ 4. Buat sebuah folder bernama `fixtures` di folder tersebut kita buat file `initial_mywatchlist_data.json`. File ini berfungsi untuk menyimpan 10 entri data awal `mywatchlist` yang berisikan film yang pernah ditonton ataupun tidak pernah ditonton. Setelah itu, load data tersebut dengan menjalankan command `python manage.py loaddata initial_mywatchlist_data.json`. 
+ 
+ 5. Buat fungsi `show_json`, `show_xml`, dan `show_html` pada `views.py` yang melakukan querying models `MyWatchList` yang telah dibuat dan mereturn data berbentuk HTML, XML, dan JSON. 
+ 
+ `Untuk HTML`<br>
+ 
+ ```html
+  def show_html(request):
+    data_mywatchlist_item = MyWatchListItem.objects.all()
+    context = {
+        'movie_list': data_mywatchlist_item,
+        'nama': 'Raspati Mahatma K.D (Tommy)',
+        'id': '2106750244'
+    }
+    return render(request, "mywatchlist.html", context)
+  ```
   
