@@ -1,8 +1,24 @@
 # Tugas 3: Pengimplementasian Data Delivery Menggunakan Django
 
-[HerokuAPP](https://django-tugaspbp2raspati.herokuapp.com/mywatchlist/)
+[HerokuAPP_HTML](https://django-tugaspbp2raspati.herokuapp.com/mywatchlist/html/)
+
+[HerokuAPP_JSON](https://django-tugaspbp2raspati.herokuapp.com/mywatchlist/json/)
+
+[HerokuAPP_XML](https://django-tugaspbp2raspati.herokuapp.com/mywatchlist/xml/)
 
 ### Perbedaan HTML, JSON, dan XML
 
 1. HTML 
-2. watchlist_html![gambar](https://user-images.githubusercontent.com/89284213/191648139-42e623a0-1f70-4081-8172-c474b454a14e.png)
+  HTML adalah bahasa standar pemrogaman yang digunakan untuk membuat halaman website, yang diakses melalui internet. Singkatan dari "Hypertext Markup Language" atau "bahasa markup". Bahasa markup ini mengacu pada cara tag yang digunakan, untuk menentukan tata letak halaman dan elemen di dalam halaman.
+
+  ```html
+  <html>
+  <body>
+
+  <p>This is a paragraph.</p>
+  <p>This is a paragraph.</p>
+  <p>This is a paragraph.</p>
+
+  </body>
+  </html>
+  ```
