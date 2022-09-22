@@ -115,7 +115,9 @@
       data = MyWatchListItem.objects.all()
       return HttpResponse(serializers.serialize("json", data), content_type="application/json")
   ```
+  
   6. Membuat routing sehingga data di atas dapat diakses melalui URL dengan cara menambahkan berikut pada urls.py di folder mywatchlist
+    
     ```
     urlpatterns = [
         path("", show_mywatchlist, name="showmywatchlist"),
@@ -124,7 +126,9 @@
         path('json/', show_json, name='show_json'),
     ]
     ```
+
 7. Membuat test unit dengan `tests.py` untuk tiap path dengan format file yang berbeda. Untuk menjalankan testnya lakukan command `python manage.py test`.
+
 8. Lakukan uji pengaksesan URL `localhost:8000` untuk 3 path format file yang telah ditambahkan menggunakan Postman. 
 watchlist_html![gambar](https://user-images.githubusercontent.com/89284213/191653735-8e7a88fc-a97f-4d84-a330-b7b3c02c6abe.png)
 watchlist_json![gambar](https://user-images.githubusercontent.com/89284213/191653770-7246ca68-057f-42cd-88ea-05363a416568.png)
