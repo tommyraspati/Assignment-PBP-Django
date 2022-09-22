@@ -25,7 +25,7 @@
  2. JSON <br>
   JavaScript object notation atau JSON adalah format yang digunakan untuk menyimpan dan mentransfer data. Berbeda dengan XML (extensive markup language) dan format lainnya yang memiliki fungsi serupa, JSON memiliki struktur data yang sederhana dan mudah dipahami. Itulah mengapa JSON sering digunakan pada API.
   
-  ```json
+  ```
     ...
   {
         "model": "mywatchlist.MyWatchListItem",
@@ -110,7 +110,7 @@
   
   `Untuk JSON`<br>
   
-  ```json
+  ```
     def show_json(request):
     data = MyWatchListItem.objects.all()
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
