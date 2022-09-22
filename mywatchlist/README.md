@@ -40,3 +40,18 @@
     },
     ...
   ```
+3. XML <br>
+  Extensible Markup Language (XML) adalah bahasa komputer yang dibuat oleh World Wide Web Consortium (W3C) untuk menyederhanakan proses pertukaran dan penyimpanan data. Hal ini disebabkan keunikan dan perbedaan sistem yang digunakan oleh masing-masing server yang terhubung ke internet. Maka dari itu, diperlukan adanya standardisasi  proses transfer data antar server.
+  
+  ```xml
+  ...
+  <object model="mywatchlist.mywatchlistitem" pk="1">
+        <field name="watched" type="TextField">yes</field>
+        <field name="title" type="TextField">Shawsank Redemption</field>
+        <field name="rating" type="FloatField">5.0</field>
+        <field name="release_date" type="TextField">1994</field>
+        <field name="review" type="TextField">The Shawshank Redemption has great performances, extremely well written script and story all leading to a                                                       deeply emotional climax</field>
+    </object>
+  ...
+  ```
+  
