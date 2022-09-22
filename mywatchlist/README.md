@@ -134,3 +134,15 @@ watchlist_html![gambar](https://user-images.githubusercontent.com/89284213/19165
 watchlist_json![gambar](https://user-images.githubusercontent.com/89284213/191653770-7246ca68-057f-42cd-88ea-05363a416568.png)
 watchlist_xml![gambar](https://user-images.githubusercontent.com/89284213/191653785-657c290c-c6dc-4574-a267-1a9762268ce2.png)
 
+9. Edit `Procfile` dengan meng-concate string ` && python manage.py loaddata initial_mywatchlist_data.json` pada `release: `. Agar aplikasi dapat me-load initial data mywatchlist saat di-deployed.
+
+10. Untuk melakukan deployment karena kita menggunakan repo dan app Heroku yang sama dengan Tugas 2, maka kita tinggal melakukan instruksi berikut:
+
+   ```
+   git add .
+   git commit -m "blablabla"
+   git push -u origin main
+   ```
+
+   Perubahan pada kode _repository_ ini akan mengubah pula _app_ Heroku yang terkait.
+
