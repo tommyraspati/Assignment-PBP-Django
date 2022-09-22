@@ -58,7 +58,7 @@
   ```
 ### Mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?  
 
-  Misal sebuah data disimpan di suatu server ,tanpa data delivery data dari database tidak akan bisa ditampilkan di sisi frontend .Untuk mengirimkan data ke sisi user, harus ada data delivery yang dikirim dari server ke user. Selain masalah tersebut ada juga kasus dimana data tersebut bisa saja berubah-ubah sepanjang jalan. Karena data sudah tersimpan di sever, data tersebut bisa diganti tanpa masalah, kemudian data tersebut bisa di-deliver ke user.
+  Misal sebuah data disimpan di suatu server ,tanpa data delivery data dari database tidak akan bisa ditampilkan di sisi frontend .Untuk mengirimkan data ke sisi user, harus ada data delivery yang dikirim dari server ke user. Selain masalah tersebut ada juga kasus dimana data tersebut bisa saja berubah-ubah sepanjang jalan. Dengan adanya data delivery,misal ada sebuah data sudah tersimpan di sever, data tersebut bisa diganti tanpa masalah, kemudian data tersebut bisa di-deliver ke user.
   
 ### Implementasi Checklist Tugas 3
 
