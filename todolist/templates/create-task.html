@@ -1,0 +1,19 @@
+<form method="POST" action="">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Title: </td>
+            <td><input type="text" name="title" placeholder="TITLE" class="form-control"></td>
+        </tr>
+                
+        <tr>
+            <td>Description: </td>
+            <td><input type="text" name="description" placeholder="DESCRIPTION" class="form-control"></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input class="btn login_btn" type="submit" value="Login"></td>
+        </tr>
+    </table>
+</form>
