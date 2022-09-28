@@ -23,6 +23,7 @@ def show_todolist(request):
     }
     return render(request, "todolist.html", context)
 
+@login_required(login_url='/todolist/login/')
 def create_task(request):
     context = {}
     if request.method == "POST":
