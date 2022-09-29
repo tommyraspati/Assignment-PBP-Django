@@ -2,7 +2,7 @@
 
 [HerokuAPP](https://django-tugaspbp2raspati.herokuapp.com/todolist/)
 
-### Kegunaan {% csrf_token %} pada elemen <form>
+# Kegunaan {% csrf_token %} pada elemen <form>
 
     Kepanjangan dari CSRF sendiri adalah Cross Site Request Forgery. Token ini berguna untuk keamanan user and site, jika user tidak memiliki token atau tokennya berbeda dengan yang ada server maka requestnya tidak akan di eksekusi. Jika tidak ada CSRF token maka form yang disubmit user tidak akan di-crosscheck oleh server sehingga Django akan menolaknya karena rawan dari serangan eksternal.
 
