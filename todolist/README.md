@@ -78,4 +78,4 @@ Tempatkan tag `<link>` di `<head>` untuk CSS kami, dan tag `<script>` untuk bund
 Menambahkan fitur-fitur dari bootstrap seperti buttons, cards, navbar, dan warna-warna.
 
 3. Membuat halaman yang responsif
-menambahkan tag <meta name="viewport" content="..."> untuk mengatur viewport dari browser sehingga sifat responsive, khususnya pada perangkat mobile, dapat terjadi dengan benar.
+menambahkan tag `<meta name="viewport" content="...">` untuk mengatur viewport dari browser sehingga sifat responsive, khususnya pada perangkat mobile, dapat terjadi dengan benar.
