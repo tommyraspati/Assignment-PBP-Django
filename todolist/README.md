@@ -34,3 +34,48 @@ password : tom12345
 USER 2
 username : bob
 password : bobthebuilder
+
+# Tugas 5: Web Design Using HTML, CSS, and CSS Framework
+
+### Perbedaan dari Inline, Internal, dan External CSS? 
+
+1. Inline CSS adalah mengaplikasikan style kepada elemen anggota suatu halaman HTML dengan menaruh style sebagai attribute dalam tag. Metode ini efektif digunakan jika hanya sebatas menambahkan styling pada 1 selector yang digunakan dan tidak akan digunakan lagi. Kekurangannya adalah hanya satu elemen yang berubah sehingga jika ingin mengaplikasikan style ke semua elemen, inline CSS harus diterapkan ke semua elemen.
+
+2. Internal CSS kode CSS-nya ditaruh pada di file HTMLnya. CSS internal diletakkan di dalam tag <style></style>. Kelebihannya Tidak perlu meng-upload beberapa file karena HTML dan CSS bisa digunakan di file yang sama dan Perubahan hanya terjadi pada 1 halaman. Kekurangannya adalah perubahan hanya terjadi pada 1 halaman – tidak efisien bila Anda ingin menggunakan CSS yang sama pada beberapa file.
+
+3. External CSS adalah menambahkan CSS ke website Anda adalah dengan menghubungkannya ke file .CSS eksternal. Apapun yang Anda buat pada file CSS akan tampil pada website Anda secara keseluruhan. Keuntungannya adalah file CSS yang sama bisa digunakan di banyak halaman. Kekurangannya adalah halaman belum tampil secara sempurna hingga file CSS selesai dipanggil.
+
+### Tag HTML5 yang kamu ketahui
+
+`<button>` - Tag ini akan membuat sebuah kotak yang dapat ditekan layaknya tombol.
+`<h1>` ... `<h6>` - Teks yang diapit oleh tag ini akan tampil sebagai heading/sub-heading. Ukuran teks `<h1>` paling besar dan ukuran teks `<h6>` paling kecil.
+`<div>` - Tag ini dapat membungkus dan memisahkan elemen-elemen lain.
+`<canvas>` digunakan sebagai kanvas atau dasar untuk menggambar animasi ataupun elemen grafis lainnya.
+
+### Tipe-tipe CSS selector yang kamu ketahui
+
+1. Element selector, element selector memilih elemen HTML berdasarkan nama elemen.
+2. Id selector, id selector menggunakan atribut id dari elemen HTML untuk memilih elemen tertentu. Id dari sebuah elemen unik dalam sebuah halaman, jadi id selector digunakan untuk memilih satu elemen unik!
+3. Class selector, class selector memilih elemen HTML dengan atribut kelas tertentu.
+
+### Implementasi checklist
+1. Import Bootstrap ke dalam template
+Tempatkan tag `<link>` di `<head>` untuk CSS kami, dan tag `<script>` untuk bundel JavaScript  sebelum penutup di `</body>` dalam `base.html`.
+
+```html
+<head>
+    ...
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    ...
+</head>
+<body>
+    ...
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+```
+
+2. Kustomisasi halaman-halaman todolist
+Menambahkan fitur-fitur dari bootstrap seperti buttons, cards, navbar, dan warna-warna.
+
+3. Membuat halaman yang responsif
+menambahkan tag <meta name="viewport" content="..."> untuk mengatur viewport dari browser sehingga sifat responsive, khususnya pada perangkat mobile, dapat terjadi dengan benar.

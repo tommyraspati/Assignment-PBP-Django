@@ -1,28 +1,43 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'todolist:show_todolist' %}">To Do List</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">{{username}}</a>
+        </li>
+
+      </ul>
+      <form class="d-flex" role="search">
+        <a class="nav-link" href="{% url 'todolist:logout' %}">Logout</a>
+      </form>
+    </div>
+  </div>
+</nav>
 <h3>Welcome back, {{username}}!</h3>
 
-<h5>Sesi terakhir login: {{ last_login }}</h5>
+<div class="d-flex justify-content-center align-items-center mt-4">
+  <a href="{% url 'todolist:create-task' %}" class="btn btn-primary">Create task</a>
+</div>
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Date</th>
-  </tr>
-  {% for task in tasks %}
-  <tr>
-    <th>{{task.user}}</th>
-    <th>{{task.title}}</th>
-    <th>{{task.description}}</th>
-    <th>{{task.date}}</th>
-  </tr>
-  {% endfor %}
-</table>
-
-<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
-<button><a href="{% url 'todolist:create-task' %}">Create Task</a></button>
-
+<div class = "container">
+    <div class="d-flex flex-wrap justify-content-center align-items-center ">
+      {% for task in tasks %}
+      <div class="card text-center m-4"  style="width: 18rem; ">
+        <div class="card-body">
+          <h5 class="card-title">{{task.title}}</h5>
+          <p class="card-text">{{task.description}}.</p>
+          <p class="card-text">{{task.date}}.</p>
+          <a href="{% url 'todolist:delete-task' task.id %}" class="btn btn-primary">Delete task</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+</div>
 {% endblock content %}

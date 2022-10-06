@@ -1,19 +1,56 @@
-<form method="POST" action="">
-    {% csrf_token %}
-    <table>
-        <tr>
-            <td>Title: </td>
-            <td><input type="text" name="title" placeholder="TITLE" class="form-control"></td>
-        </tr>
-                
-        <tr>
-            <td>Description: </td>
-            <td><input type="text" name="description" placeholder="DESCRIPTION" class="form-control"></td>
-        </tr>
+{% extends 'base.html' %}
+{% load static %}
 
-        <tr>
-            <td></td>
-            <td><input class="btn create_btn" type="submit" value="Create"></td>
-        </tr>
-    </table>
-</form>
+{% block content %}
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Create Task</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">{{username}}</a>
+                </li>
+                
+            </ul>
+            <form class="d-flex" role="search">
+                <a class="nav-link" href="{% url 'todolist:show_todolist' %}">Back to Home</a>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="vh-100 gradient-form" style="background-color: rgb(183, 189, 171);">
+    <div class="mask d-flex align-items-center h-100">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5">Create Task</h2>
+                                <form method="POST" action="">
+                                    {% csrf_token %}
+                                    <div class="form-outline mb-4">
+                                        <input type="text" type="text" name="title" placeholder="TITLE" class="form-control" />
+                                        <label class="form-label" >Title</label>
+                                    </div>
+                                    
+                                    
+                                    <div class="form-outline mb-4">
+                                        <input type="text" name="description" placeholder="DESCRIPTION" class="form-control" />
+                                        <label class="form-label" >DESCRIPTION</label>
+                                    </div>
+
+                                    <div class="text-center pt-1 mb-5 pb-1">
+                                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Create</button>
+
+                                </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

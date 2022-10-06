@@ -1,45 +1,68 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block meta %}
 <title>Login</title>
+
 {% endblock meta %}
 
 {% block content %}
-
-<div class = "login">
-
-    <h1>Login</h1>
-
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
-
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
-        
-    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
-
+<div class="h-100 gradient-form" style="background-color: rgb(183, 189, 171);">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-xl-10">
+          <div class="card rounded-3 text-black">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="card-body p-md-5 mx-md-4">
+  
+                  <div class="text-center">
+                    <img src="https://i.ibb.co/P67JvLd/logo-Fasill.png"
+                      style="width: 185px;" alt="logo">
+                    <br><br>
+                    <h4 class="mt-1 mb-5 pb-1">Pachillian ToDoList</h4>
+                  </div>
+  
+                  <form method="POST" action="">
+                    {% csrf_token %}
+                    <p>Please login to your account</p>
+  
+                    <div class="form-outline mb-4">
+                      <input type="text"  class="form-control" name="username" placeholder="Username" />
+                      <label class="form-label">Username</label>
+                    </div>
+  
+                    <div class="form-outline mb-4">
+                      <input type="password" name="password" placeholder="Password" class="form-control" />
+                      <label class="form-label" >Password</label>
+                    </div>
+  
+                    <div class="text-center pt-1 mb-5 pb-1">
+                      <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Log
+                        in</button>
+  
+                    <div class="d-flex align-items-center justify-content-center pb-4 gap-2">
+                        <p class="mb-0 me-2 mr-4 ">Don't have an account? </p>  
+                        <a href="{% url 'todolist:register' %}">
+                            <button type="button" class="btn btn-outline-danger">Create new</button>
+                        </a>
+                      
+                    </div>
+  
+                  </form>
+                  {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
 </div>
 
 {% endblock content %}

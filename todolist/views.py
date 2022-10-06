@@ -66,4 +66,9 @@ def logout_user(request):
     response.delete_cookie('last_login')
     return response
 
+def delete_task(request, id):
+    task = Task.objects.get(pk=id)
+    task.delete()
+    return redirect('todolist:show_todolist')
+
 
