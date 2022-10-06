@@ -47,10 +47,10 @@ password : bobthebuilder
 
 ### Tag HTML5 yang kamu ketahui
 
-`<button>` - Tag ini akan membuat sebuah kotak yang dapat ditekan layaknya tombol.
-`<h1>` ... `<h6>` - Teks yang diapit oleh tag ini akan tampil sebagai heading/sub-heading. Ukuran teks `<h1>` paling besar dan ukuran teks `<h6>` paling kecil.
-`<div>` - Tag ini dapat membungkus dan memisahkan elemen-elemen lain.
-`<canvas>` digunakan sebagai kanvas atau dasar untuk menggambar animasi ataupun elemen grafis lainnya.
+1. `<button>` - Tag ini akan membuat sebuah kotak yang dapat ditekan layaknya tombol.
+2. `<h1>` ... `<h6>` - Teks yang diapit oleh tag ini akan tampil sebagai heading/sub-heading. Ukuran teks `<h1>` paling besar dan ukuran teks `<h6>` paling kecil.
+3. `<div>` - Tag ini dapat membungkus dan memisahkan elemen-elemen lain.
+4. `<canvas>` digunakan sebagai kanvas atau dasar untuk menggambar animasi ataupun elemen grafis lainnya.
 
 ### Tipe-tipe CSS selector yang kamu ketahui
 
