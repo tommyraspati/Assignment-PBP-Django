@@ -1,7 +1,53 @@
-{% extends 'base.html' %}
+# Tugas 6: Javascript dan AJAX
 
-{% block content %}
-{% load static %}
+[HerokuAPP](https://django-tugaspbp2raspati.herokuapp.com/todolist/)
+
+###  Perbedaan antara asynchronous programming dengan synchronous programming
+
+- _Asychronous programming_ proses jalannya program bisa dilakukan secara bersamaan tanpa harus menunggu proses antrian. Sehingga waktu eksekusi lebih cepat.
+
+- _Synchronous programming_ adalah proses jalannya program secara sequential , disini yang dimaksud sequential ada berdasarkan antrian ekseskusi program jadi menunggu proses antrian eksekusi. Waktu jalannya program lebih lama daripada _asynchronous programming_
+
+### Event-driven programming
+
+Event-Driven Programming adalah salah satu teknik pemogramman, yang konsep kerjanya tergantung dari kejadian atau event tertentu. Event-Driven programming juga bisa dibilang suatu paradigma pemrograman yang alur programnya ditentukan oleh suatu event / peristiwa yang merupakan keluaran atau tindakan pengguna atau bisa berupa pesan dari program lainnya. Contoh di program: $("#form-ajax").on("submit",function(e) {}
+
+### Penerapan asynchronous programming pada AJAX
+- Menambahkan `<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>` pada base html `<head>`
+- Tambahkan `<script>` di dalam file html
+- Ajax akan melakukan event yang telah dibuat.
+- Action dan response akan dilakukan secara asynchronus oleh server
+- Data akan ditampilkan pada page tanpa harus refresh lagi
+
+### Cara implementasi checklist
+- Tambahkan fungsi berikut di `views.py`:
+
+```
+@csrf_exempt
+@login_required(login_url="/todolist/login/")
+def add_task(request):
+
+    if request.method == "POST":
+        title = request.POST.get("title")
+        description = request.POST.get("description")
+        temp = Task.objects.create(
+            title=title, description=description, user=request.user
+        )
+        return JsonResponse({
+            "title": title,
+            "date": temp.date,
+            "description": description
+        }, status=200)
+
+def show_json(request):
+    data = Task.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+```
+
+- Tambahkan path show_json dan add_task ke urlpatterns di urls.py
+- Tambahkan script ajax di base.html
+- Buat fungsi GET dan POST di `todolist.html` dengan kode sebagi berikut:
+```
 <script>
         $(document).ready(function(){
             $.getJSON("{% url 'todolist:show_json' %}", function(data){
@@ -51,37 +97,9 @@
 
 
 </script>
-
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'todolist:show_todolist' %}">To Do List</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">{{username}}</a>
-        </li>
-
-      </ul>
-      <form class="d-flex" role="search">
-        <a class="nav-link" href="{% url 'todolist:logout' %}">Logout</a>
-      </form>
-    </div>
-  </div>
-</nav>
-<h3>Welcome back, {{username}}!</h3>
-<div style="display:flex; flex-direction: column; align-items: center; width:100%;">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap" id="create-task">Create Task</button>
-</div>
-<div class="d-flex flex-wrap justify-content-center align-items-center mt-4 " id = "todolist_container">
-</div>
-
-<div class = "container">
-</div>
-
-
+```
+- Tambahkan modal di `todolist.html`:
+```
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -111,3 +129,4 @@
   </div>
 </div>
 {% endblock content %}
+```

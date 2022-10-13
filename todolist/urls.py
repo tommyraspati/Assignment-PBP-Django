@@ -10,5 +10,7 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
     path('create-task/', create_task, name='create-task'),
     path('delete-task/<int:id>', delete_task, name='delete-task'),
+    path('json/', show_json, name='show_json'),
+    path('add/', add_task, name='add_task')
 
 ]

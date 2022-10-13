@@ -9,8 +9,9 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 import datetime
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse, HttpRequest
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
 
 
 @login_required(login_url='/todolist/login/')
@@ -31,6 +32,24 @@ def create_task(request):
         temp.save()
         return redirect('todolist:show_todolist')
     return render(request, "create-task.html",context)
+
+@csrf_exempt
+@login_required(login_url="/todolist/login/")
+def add_task(request):
+
+    if request.method == "POST":
+        title = request.POST.get("title")
+        description = request.POST.get("description")
+        temp = Task.objects.create(
+            title=title, description=description, user=request.user
+        )
+        return JsonResponse({
+            "title": title,
+            "date": temp.date,
+            "description": description
+        }, status=200)
+    
+
 
 def register_user(request):
     form = UserCreationForm()
@@ -67,8 +86,16 @@ def logout_user(request):
     return response
 
 def delete_task(request, id):
-    task = Task.objects.get(pk=id)
+    task = Task.objects.filter(pk=id)
     task.delete()
     return redirect('todolist:show_todolist')
 
+def show_json(request):
+    data = Task.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+def show_xml(request):
+    data = Task.objects.filter(user=request.user)
+    
+    return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
 
